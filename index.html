@@ -1,5 +1,244 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WeHo Bagel Co</title></head>
-<body style="font-family:sans-serif;text-align:center;padding:20vh 1rem">
-<h1>WeHo Bagel Co</h1><p>Coming soon.</p></body></html>
+<!--
+  WeHo Bagel Co — landing page
+  Easy edits (search for these):
+    TAGLINE     – the line under the logo
+    INSTAGRAM   – your Instagram handle/link
+    EMAIL       – contact email
+    MENU        – bagel + schmear names
+    LOCATION    – address / hours once known
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WeHo Bagel Co — Coming Soon</title>
+<meta name="description" content="Hand-rolled, kettle-boiled bagels. WeHo Bagel Co is coming soon.">
+<meta property="og:title" content="WeHo Bagel Co">
+<meta property="og:description" content="Hand-rolled, kettle-boiled bagels. Coming soon.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥯</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7efe1; --dough:#efe0c4; --crust:#c0782f; --toast:#8a4b1c;
+    --ink:#2b1d12; --green:#1f4d3a; --muted:#6b5a4a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* Nav */
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .logo{font-family:Fraunces,serif;font-weight:800;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
+  .logo span{color:var(--crust)}
+  nav ul{list-style:none;display:flex;gap:28px;font-weight:500;font-size:.95rem}
+  nav ul a{text-decoration:none;opacity:.8}
+  nav ul a:hover{opacity:1}
+
+  /* Hero */
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:56px 0 96px}
+  .badge{display:inline-block;background:var(--green);color:var(--cream);font-size:.78rem;font-weight:600;
+         letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px;margin-bottom:22px}
+  h1{font-family:Fraunces,serif;font-weight:800;font-size:clamp(3rem,7.5vw,5.6rem);line-height:.95;letter-spacing:-.03em}
+  h1 em{font-style:normal;color:var(--crust)}
+  .lede{font-size:1.2rem;color:var(--muted);max-width:30ch;margin:22px 0 34px}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--ink);color:var(--cream)}
+  .btn-ghost{border:2px solid var(--ink)}
+  .bagel{width:100%;max-width:420px;justify-self:center;animation:spin 60s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.bagel{animation:none}}
+
+  /* Strip */
+  .strip{background:var(--green);color:var(--cream);overflow:hidden;white-space:nowrap;padding:16px 0;
+         font-family:Fraunces,serif;font-size:1.3rem;font-weight:500}
+  .strip div{display:inline-block;animation:marquee 30s linear infinite}
+  .strip span{margin:0 28px;color:#e9b36b}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  /* Sections */
+  section{padding:96px 0}
+  h2{font-family:Fraunces,serif;font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em;line-height:1.05;margin-bottom:18px}
+  .eyebrow{color:var(--crust);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;margin-bottom:10px}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .about p{color:var(--muted);font-size:1.08rem;margin-bottom:14px}
+  .steps{display:grid;gap:16px}
+  .step{background:var(--dough);border-radius:18px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start}
+  .step b{font-family:Fraunces,serif;font-size:1.6rem;color:var(--crust);line-height:1}
+  .step h3{font-size:1.05rem;margin-bottom:2px}
+  .step p{color:var(--muted);font-size:.95rem;margin:0}
+
+  .menu{background:var(--dough)}
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px}
+  .menu h3{font-family:Fraunces,serif;font-size:1.4rem;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+  .menu ul{list-style:none}
+  .menu li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed #c9b28e}
+  .menu li span{color:var(--muted);font-size:.92rem;text-align:right}
+
+  .visit{text-align:center}
+  .visit p{color:var(--muted);font-size:1.1rem;max-width:44ch;margin:0 auto 30px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;text-align:left}
+  .card{background:#fff8ec;border:1px solid #e6d5b6;border-radius:18px;padding:24px}
+  .card h3{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--crust);margin-bottom:8px}
+  .card p{margin:0;color:var(--ink);font-size:1rem;max-width:none}
+
+  footer{background:var(--ink);color:var(--cream);padding:40px 0;font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;opacity:.85}
+
+  @media (max-width:820px){
+    nav ul{display:none}
+    .hero,.about,.menu-grid{grid-template-columns:1fr}
+    .hero{padding-top:24px;text-align:center}
+    .lede{margin-left:auto;margin-right:auto}
+    .btns{justify-content:center}
+    .bagel{max-width:280px;grid-row:1}
+    .cards{grid-template-columns:1fr}
+    section{padding:72px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav>
+    <a href="#" class="logo">WeHo <span>Bagel</span> Co</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <div class="badge">Opening soon</div>
+      <h1>Bagels worth <em>waking up</em> for.</h1>
+      <!-- TAGLINE -->
+      <p class="lede">Hand-rolled, kettle-boiled, and baked fresh every morning in Wedgewood-Houston, Nashville.</p>
+      <div class="btns">
+        <!-- INSTAGRAM -->
+        <a class="btn btn-primary" href="https://instagram.com/wehobagelco" target="_blank" rel="noopener">Follow on Instagram</a>
+        <a class="btn btn-ghost" href="#menu">See the menu</a>
+      </div>
+    </div>
+
+    <svg class="bagel" viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <radialGradient id="g" cx="45%" cy="40%" r="60%">
+          <stop offset="0" stop-color="#e7a85a"/>
+          <stop offset=".6" stop-color="#c0782f"/>
+          <stop offset="1" stop-color="#8a4b1c"/>
+        </radialGradient>
+      </defs>
+      <path fill="url(#g)" fill-rule="evenodd"
+        d="M100 14a86 86 0 1 1 0 172a86 86 0 1 1 0-172zm0 62a24 24 0 1 0 0 48a24 24 0 1 0 0-48z"/>
+      <g fill="#fbefd6">
+        <ellipse cx="62" cy="48" rx="4" ry="2.2" transform="rotate(-30 62 48)"/>
+        <ellipse cx="95" cy="34" rx="4" ry="2.2" transform="rotate(10 95 34)"/>
+        <ellipse cx="132" cy="44" rx="4" ry="2.2" transform="rotate(40 132 44)"/>
+        <ellipse cx="156" cy="74" rx="4" ry="2.2" transform="rotate(70 156 74)"/>
+        <ellipse cx="164" cy="112" rx="4" ry="2.2" transform="rotate(-60 164 112)"/>
+        <ellipse cx="146" cy="148" rx="4" ry="2.2" transform="rotate(20 146 148)"/>
+        <ellipse cx="112" cy="166" rx="4" ry="2.2" transform="rotate(-15 112 166)"/>
+        <ellipse cx="74" cy="160" rx="4" ry="2.2" transform="rotate(35 74 160)"/>
+        <ellipse cx="46" cy="132" rx="4" ry="2.2" transform="rotate(-50 46 132)"/>
+        <ellipse cx="38" cy="94" rx="4" ry="2.2" transform="rotate(80 38 94)"/>
+        <ellipse cx="78" cy="66" rx="3.4" ry="1.9" transform="rotate(50 78 66)"/>
+        <ellipse cx="126" cy="66" rx="3.4" ry="1.9" transform="rotate(-20 126 66)"/>
+        <ellipse cx="138" cy="122" rx="3.4" ry="1.9" transform="rotate(60 138 122)"/>
+        <ellipse cx="92" cy="140" rx="3.4" ry="1.9" transform="rotate(-40 92 140)"/>
+        <ellipse cx="62" cy="108" rx="3.4" ry="1.9" transform="rotate(15 62 108)"/>
+      </g>
+      <g fill="#2b1d12" opacity=".75">
+        <circle cx="110" cy="28" r="1.8"/><circle cx="150" cy="58" r="1.8"/><circle cx="168" cy="94" r="1.8"/>
+        <circle cx="128" cy="160" r="1.8"/><circle cx="58" cy="150" r="1.8"/><circle cx="34" cy="114" r="1.8"/>
+        <circle cx="48" cy="64" r="1.8"/><circle cx="80" cy="30" r="1.8"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div>
+    Everything <span>●</span> Sesame <span>●</span> Plain <span>●</span> Poppy <span>●</span> Salt <span>●</span> Cinnamon Raisin <span>●</span> Scallion Schmear <span>●</span> Lox <span>●</span>
+    Everything <span>●</span> Sesame <span>●</span> Plain <span>●</span> Poppy <span>●</span> Salt <span>●</span> Cinnamon Raisin <span>●</span> Scallion Schmear <span>●</span> Lox <span>●</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <div class="eyebrow">The idea</div>
+      <h2>A real bagel, done the slow way.</h2>
+      <p>We're building a neighborhood bagel shop for people who care about the chew. Our dough rests overnight, then every bagel is shaped by hand, boiled, and baked until the crust crackles.</p>
+      <p>Simple ingredients, good coffee, and a schmear that's made in-house.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><b>01</b><div><h3>Cold-proofed overnight</h3><p>A long, slow rise for deeper flavor.</p></div></div>
+      <div class="step"><b>02</b><div><h3>Kettle-boiled</h3><p>Gives the shiny crust and dense, chewy middle.</p></div></div>
+      <div class="step"><b>03</b><div><h3>Baked every morning</h3><p>Fresh from the oven, never day-old.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="menu">
+  <div class="wrap">
+    <div class="eyebrow">A first look</div>
+    <h2>The menu (so far)</h2>
+    <div class="menu-grid">
+      <div>
+        <h3>Bagels</h3>
+        <ul>
+          <li>Everything <span>sesame, poppy, garlic, onion, salt</span></li>
+          <li>Sesame <span>toasted white sesame</span></li>
+          <li>Plain <span>the classic</span></li>
+          <li>Salt <span>flaky sea salt</span></li>
+          <li>Cinnamon Raisin <span>a little sweet</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Schmears &amp; Sandwiches</h3>
+        <ul>
+          <li>Plain Cream Cheese <span>whipped in-house</span></li>
+          <li>Scallion <span>fresh green onion</span></li>
+          <li>Lox &amp; Schmear <span>capers, red onion, tomato</span></li>
+          <li>Egg &amp; Cheese <span>soft scrambled, cheddar</span></li>
+          <li>Coffee <span>drip, cold brew, espresso</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="visit" class="visit">
+  <div class="wrap">
+    <div class="eyebrow">Visit</div>
+    <h2>Coming soon to WeHo, Nashville</h2>
+    <p>We're putting the finishing touches on the shop. Follow along on Instagram for opening day, sneak peeks, and the first free bagels.</p>
+    <a class="btn btn-primary" href="https://instagram.com/wehobagelco" target="_blank" rel="noopener">@wehobagelco</a>
+    <div class="cards">
+      <div class="card"><h3>Location</h3><p>Wedgewood-Houston<br>Nashville, TN · Address coming soon</p></div>
+      <div class="card"><h3>Hours</h3><p>Early mornings, daily<br>Exact hours at opening</p></div>
+      <!-- EMAIL -->
+      <div class="card"><h3>Say hello</h3><p><a href="mailto:hello@wehobagelco.com">hello@wehobagelco.com</a></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> WeHo Bagel Co</span>
+    <span>Hand-rolled in Wedgewood-Houston, Nashville</span>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
